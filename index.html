@@ -1,542 +1,128 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kriti Gupta | Business Analyst & AI Engineer</title>
-    <meta name="description" content="Portfolio of Kriti Gupta - Business Analyst, AI Builder, and Certified Power BI Specialist. Bridging the gap between data pipelines, AI models, and executive decisions.">
+    <title>Kriti Gupta - Portfolio</title>
     
-    <!-- Tailwind, Lucide Icons, and AlpineJS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    
-    <!-- Premium Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <script>
-        tailwind.config = {
-          theme: {
-            extend: {
-              colors: {
-                utaBlue: '#002868',
-                utaOrange: '#F58025',
-                premiumDark: '#0B0F19',
-                glassWhite: 'rgba(255, 255, 255, 0.03)',
-                cardBorder: 'rgba(255, 255, 255, 0.08)',
-              },
-              fontFamily: {
-                sans: ['Plus Jakarta Sans', 'sans-serif'],
-                display: ['Space Grotesk', 'sans-serif'],
-              }
-            }
-          }
-        }
-    </script>
+    <script src="https://unpkg.com/lucide@0.475.0/dist/umd/lucide.min.js"></script>
 
     <style>
-        body { background-color: #05070C; color: #F3F4F6; }
-        
-        /* Immersive Custom Glows & Grids */
-        .bg-cyber-grid { 
-            background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px); 
-            background-size: 40px 40px; 
-        }
-        .glow-orb-orange { filter: blur(140px); background: radial-gradient(circle, rgba(245,128,37,0.15) 0%, transparent 70%); }
-        .glow-orb-blue { filter: blur(140px); background: radial-gradient(circle, rgba(0,40,104,0.4) 0%, transparent 70%); }
-        
-        /* Ultra Glassmorphism */
-        .premium-glass { background: rgba(11, 15, 25, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.08); }
-        .nav-glass { background: rgba(5, 7, 12, 0.75); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.05); }
-        
-        /* Text Gradient Shaders */
-        .text-gradient-io { 
-            background: linear-gradient(135deg, #FFFFFF 20%, #A5B4FC 50%, #F58025 100%); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-        }
-        .text-orange-gradient {
-            background: linear-gradient(135deg, #F58025 0%, #FFB076 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* Base styles matching your modern dark theme layout */
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        /* Fancy Hover Card System */
-        .interactive-card { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-        .interactive-card:hover { 
-            transform: translateY(-6px) scale(1.01); 
-            border-color: rgba(245, 128, 37, 0.4); 
-            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.8), 0 0 50px -10px rgba(245,128,37,0.1);
+        .header-container {
+            text-align: center;
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #ffffff;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            color: #8b949e;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        /* Social Button Containers */
+        .cta-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        /* Circular Social Icon Wrapper */
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            color: #8b949e;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .social-btn:hover {
+            color: #58a6ff;
+            border-color: #58a6ff;
+            background-color: #21262d;
+        }
+
+        /* Let's Talk CTA Button */
+        .talk-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 24px;
+            height: 45px;
+            border-radius: 23px;
+            background: linear-gradient(135deg, #1f40aa, #162a70);
+            color: #ffffff;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px rgba(31, 64, 170, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .talk-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(31, 64, 170, 0.4);
+        }
+
+        /* Optional Lucide Icon sizing adjustment */
+        .social-btn i, .social-btn svg {
+            width: 20px;
+            height: 20px;
         }
     </style>
 </head>
-<body class="antialiased overflow-x-hidden selection:bg-utaOrange selection:text-white">
+<body>
 
-    <!-- Global Glowing Accents -->
-    <div class="absolute top-0 left-1/4 w-[600px] h-[600px] glow-orb-blue pointer-events-none z-0"></div>
-    <div class="absolute top-1/3 right-1/4 w-[500px] h-[500px] glow-orb-orange pointer-events-none z-0"></div>
-    <div class="absolute bottom-1/4 left-10 w-[700px] h-[700px] glow-orb-blue pointer-events-none z-0"></div>
-
-    <!-- Header Navigation -->
-    <nav class="fixed w-full top-0 z-50 nav-glass">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 h-24 flex items-center justify-between">
-            <div class="font-display font-bold text-2xl tracking-tight text-white flex items-center gap-2">
-                <span class="bg-gradient-to-r from-utaBlue to-utaOrange w-3 h-3 rounded-full animate-pulse"></span>
-                KRITI<span class="text-utaOrange">.</span>GUPTA
-            </div>
-            
-            <div class="hidden md:flex items-center space-x-10 text-sm font-medium tracking-wide text-gray-400">
-                <a href="#home" class="hover:text-white transition duration-300">Home</a>
-                <a href="#metrics" class="hover:text-white transition duration-300">Impact</a>
-                <a href="#projects" class="hover:text-white transition duration-300">Projects</a>
-                <a href="#skills" class="hover:text-white transition duration-300">Skills</a>
-                <a href="#experience" class="hover:text-white transition duration-300">Experience</a>
-            </div>
-
-            <div class="flex items-center space-x-4">
-                <a href="https://github.com/kriti613" target="_blank" class="w-10 h-10 rounded-full flex items-center justify-center bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:border-utaOrange transition duration-300"><i data-lucide="github" class="w-4 h-4"></i></a>
-                <a href="https://www.linkedin.com/in/kriti-guptaaa/" target="_blank" class="w-10 h-10 rounded-full flex items-center justify-center bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:border-utaOrange transition duration-300"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
-                <a href="#contact" class="hidden sm:inline-flex bg-gradient-to-r from-utaBlue to-blue-800 text-white border border-blue-500/30 px-6 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider hover:from-utaOrange hover:to-orange-600 hover:border-orange-400 transition-all duration-300 shadow-lg shadow-blue-950/50">Let's Talk</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Showcase Section -->
-    <section id="home" class="relative pt-44 pb-32 overflow-hidden bg-cyber-grid">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-12 items-center relative z-10">
-            
-            <!-- Left Narrative -->
-            <div class="lg:col-span-7 space-y-8">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full premium-glass border-white/10 shadow-inner">
-                    <i data-lucide="shield-check" class="w-4 h-4 text-utaOrange"></i>
-                    <span class="text-xs font-semibold uppercase tracking-widest text-gray-300">Microsoft Certified PL-300 Data Analyst</span>
-                </div>
-                
-                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-display font-extrabold tracking-tight leading-none text-white">
-                    Translating Complexity <br class="hidden sm:inline"> Into <span class="text-gradient-io">Actionable ROI.</span>
-                </h1>
-                
-                <p class="text-lg sm:text-xl text-gray-400 leading-relaxed max-w-2xl font-light">
-                    I’m a Business Analyst specializing in turning messy data ecosystems into pristine enterprise models, decision-ready Power BI architectures, and customized GenAI workflows. 
-                </p>
-
-                <!-- Core Technical Quick Badges -->
-                <div class="flex flex-wrap gap-2 pt-2">
-                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs font-mono text-gray-300">SQL Expert</span>
-                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs font-mono text-gray-300">Python Automation</span>
-                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs font-mono text-gray-300">Advanced DAX / M Query</span>
-                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs font-mono text-gray-300">RAG Architecture</span>
-                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs font-mono text-gray-300">Agile Frameworks</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-4 pt-4">
-                    <a href="#projects" class="bg-gradient-to-r from-utaOrange to-amber-600 text-white px-8 py-4 rounded-xl font-bold text-sm tracking-wide hover:opacity-90 transition-all duration-300 flex items-center gap-2 shadow-xl shadow-utaOrange/10">
-                        Explore Systems <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                    <a href="#experience" class="premium-glass text-white border-white/10 hover:border-white/30 px-8 py-4 rounded-xl font-bold text-sm tracking-wide transition duration-300">
-                        View Background
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Right Framed Media Grid -->
-            <div class="lg:col-span-5 relative flex justify-center lg:justify-end">
-                <div class="relative group max-w-sm sm:max-w-md w-full">
-                    <!-- Geometric Graphic Accents behind image -->
-                    <div class="absolute -inset-1.5 bg-gradient-to-r from-utaBlue to-utaOrange rounded-[2.5rem] blur opacity-40 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
-                    
-                    <div class="relative rounded-[2.5rem] overflow-hidden bg-premiumDark border border-white/10 shadow-2xl aspect-[4/5]">
-                        <img src="https://github.com/kriti613/kriti-portfolio-web/blob/main/kriti-pic.jpeg?raw=1" alt="Kriti Gupta - Professional Headshot" class="w-full h-full object-cover group-hover:scale-102 transition duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-premiumDark via-premiumDark/20 to-transparent"></div>
-                        
-                        <!-- Floating HUD Overlay inside image context -->
-                        <div class="absolute bottom-6 left-6 right-6 premium-glass p-5 rounded-2xl border-white/10 flex items-center justify-between">
-                            <div>
-                                <p class="text-[10px] uppercase tracking-widest text-gray-400 font-mono">Location Context</p>
-                                <h4 class="text-sm font-bold text-white font-display flex items-center gap-1.5 mt-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-utaOrange"></i> Dallas-Fort Worth, TX</h4>
-                            </div>
-                            <div class="text-right">
-                                <p class="text-[10px] uppercase tracking-widest text-gray-400 font-mono">Candidate Status</p>
-                                <span class="inline-block mt-1 text-xs px-2 py-0.5 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 rounded-md font-medium">Available</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- High-Impact Live Metric Snapshot -->
-    <section id="metrics" class="py-12 border-y border-white/5 bg-premiumDark/50 relative z-10">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
-                <div class="text-center md:text-left">
-                    <h3 class="text-4xl lg:text-5xl font-display font-extrabold text-white">3+<span class="text-utaOrange">Yrs</span></h3>
-                    <p class="text-xs uppercase tracking-wider text-gray-500 font-mono mt-2">Enterprise Analytics Practice</p>
-                </div>
-                <div class="text-center md:text-left border-l border-white/5 pl-0 md:pl-8">
-                    <h3 class="text-4xl lg:text-5xl font-display font-extrabold text-white">30%</h3>
-                    <p class="text-xs uppercase tracking-wider text-gray-500 font-mono mt-2">Defect Reduction in Pharma BI</p>
-                </div>
-                <div class="text-center md:text-left border-l border-white/5 pl-0 md:pl-8">
-                    <h3 class="text-4xl lg:text-5xl font-display font-extrabold text-gradient-io">Top 1</h3>
-                    <p class="text-xs uppercase tracking-wider text-gray-500 font-mono mt-2">UTA Datathon 2025 Solo Winner</p>
-                </div>
-                <div class="text-center md:text-left border-l border-white/5 pl-0 md:pl-8">
-                    <h3 class="text-4xl lg:text-5xl font-display font-extrabold text-white">321K+</h3>
-                    <p class="text-xs uppercase tracking-wider text-gray-500 font-mono mt-2">ETL Records Pipeline Validated</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Immersive Interactive Projects Case Study Deck -->
-    <section id="projects" class="py-32 relative z-10">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
-                <div>
-                    <div class="flex items-center gap-2 text-utaOrange uppercase tracking-widest font-mono text-xs mb-3">
-                        <span class="w-6 h-[1px] bg-utaOrange"></span> Engineering & Analytics Showpiece
-                    </div>
-                    <h2 class="text-4xl sm:text-5xl font-display font-extrabold text-white">Production-Grade Projects.</h2>
-                </div>
-                <a href="https://github.com/kriti613" target="_blank" class="text-sm font-semibold tracking-wide text-gray-300 hover:text-utaOrange flex items-center gap-2 group transition">
-                    View Master Repository <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"></i>
-                </a>
-            </div>
-
-            <!-- Dynamic Alpine Interactive Accordion Card Architecture -->
-            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12" x-data="{ openPanel: null }">
-                
-                <!-- Project Node 1: AI Chatbot -->
-                <div class="premium-glass rounded-[2.5rem] overflow-hidden border-white/5 interactive-card flex flex-col h-full">
-                    <div class="h-64 relative bg-slate-900 overflow-hidden group border-b border-white/5">
-                        <img src="https://raw.githubusercontent.com/kriti613/kriti-portfolio-web/main/AviationDashboard.jpeg" class="w-full h-full object-cover transition duration-700 brightness-90 group-hover:brightness-100 group-hover:scale-105" alt="Aviation AI Engine">
-                        <div class="absolute inset-0 bg-gradient-to-t from-premiumDark via-transparent to-transparent"></div>
-                        <span class="absolute top-6 left-6 premium-glass border-white/20 text-utaOrange text-[10px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-md">Symposium 2nd Place / Datathon Winner</span>
-                    </div>
-                    
-                    <div class="p-8 lg:p-10 flex flex-col flex-grow justify-between">
-                        <div>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] font-mono px-2.5 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded font-bold uppercase">OpenAI API</span>
-                                <span class="text-[10px] font-mono px-2.5 py-1 bg-amber-500/10 text-utaOrange border border-amber-500/20 rounded font-bold uppercase">LangChain</span>
-                                <span class="text-[10px] font-mono px-2.5 py-1 bg-purple-500/10 text-purple-400 border border-purple-500/20 rounded font-bold uppercase">RAG Architecture</span>
-                                <span class="text-[10px] font-mono px-2.5 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded font-bold uppercase">FAISS</span>
-                            </div>
-                            <h3 class="text-2xl font-display font-extrabold text-white mb-3 tracking-tight">Aviation Intelligence Generative Bot</h3>
-                            <p class="text-gray-400 font-light leading-relaxed mb-6 text-sm">Designed and deployed a stateful, production-grade conversational agent using custom prompt engineering guardrails and complete end-to-end multi-format data pipeline integration.</p>
-                        </div>
-
-                        <div>
-                            <div class="flex gap-4 border-t border-white/5 pt-6">
-                                <button @click="openPanel = (openPanel === 1 ? null : 1)" class="text-xs uppercase tracking-wider font-mono font-bold bg-white text-premiumDark px-6 py-3 rounded-xl hover:bg-utaOrange hover:text-white transition-all duration-300 flex items-center gap-1">
-                                    <span x-text="openPanel === 1 ? 'Hide Architectural Deep-Dive' : 'Architectural Deep-Dive'"></span>
-                                    <i data-lucide="chevron-down" class="w-4 h-4 transition duration-300" :class="openPanel === 1 ? 'rotate-180' : ''"></i>
-                                </button>
-                                <a href="https://www.youtube.com/watch?v=EMaR-ovGTgo" target="_blank" class="text-xs uppercase tracking-wider font-mono font-bold border border-white/10 px-6 py-3 rounded-xl text-gray-300 hover:bg-white/5 transition flex items-center gap-2"><i data-lucide="play" class="w-3.5 h-3.5"></i> Stream Demo</a>
-                            </div>
-                            
-                            <!-- Architectural Accordion Draw -->
-                            <div x-show="openPanel === 1" x-collapse class="mt-6 pt-6 border-t border-white/5 text-xs text-gray-400 space-y-4 font-light">
-                                <div class="grid grid-cols-3 gap-4 font-mono text-[11px] mb-2 text-gray-300">
-                                    <div class="p-2.5 bg-white/5 rounded-lg border border-white/5"><span class="text-utaOrange block font-bold mb-0.5">PROBLEM</span> Fragmented data formats paralyzing fleet operational visibility.</div>
-                                    <div class="p-2.5 bg-white/5 rounded-lg border border-white/5"><span class="text-blue-400 block font-bold mb-0.5">METRIC</span> Evaluated vector queries securely with prompt guardrails.</div>
-                                    <div class="p-2.5 bg-white/5 rounded-lg border border-white/5"><span class="text-emerald-400 block font-bold mb-0.5">IMPACT</span> Beat out 40 teams across comprehensive data evaluation matrices.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Node 2: Spotify ETL System -->
-                <div class="premium-glass rounded-[2.5rem] overflow-hidden border-white/5 interactive-card flex flex-col h-full">
-                    <div class="h-64 relative bg-slate-900 overflow-hidden group border-b border-white/5">
-                        <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transition duration-700 brightness-75 group-hover:brightness-90 group-hover:scale-105" alt="Spotify Pipeline Platform">
-                        <div class="absolute inset-0 bg-gradient-to-t from-premiumDark via-transparent to-transparent"></div>
-                        <span class="absolute top-6 left-6 premium-glass border-white/20 text-blue-400 text-[10px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-md">End-to-End Pipeline Infrastructure</span>
-                    </div>
-                    
-                    <div class="p-8 lg:p-10 flex flex-col flex-grow justify-between">
-                        <div>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-[10px] font-mono px-2.5 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded font-bold uppercase">Python Data Modeling</span>
-                                <span class="text-[10px] font-mono px-2.5 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded font-bold uppercase">PostgreSQL</span>
-                                <span class="text-[10px] font-mono px-2.5 py-1 bg-amber-500/10 text-utaOrange border border-amber-500/20 rounded font-bold uppercase">ETL/ELT Logic</span>
-                                <span class="text-[10px] font-mono px-2.5 py-1 bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 rounded font-bold uppercase">Analytical SQL</span>
-                            </div>
-                            <h3 class="text-2xl font-display font-extrabold text-white mb-3 tracking-tight">Spotify Monday Morning Data Pipeline</h3>
-                            <p class="text-gray-400 font-light leading-relaxed mb-6 text-sm">Engineered a multi-tiered pipeline staging data through architectural layers (Staging $\rightarrow$ Validated $\rightarrow$ Curated). Enforced strict data normalization models using complex analytical windowing logic.</p>
-                        </div>
-
-                        <div>
-                            <div class="flex gap-4 border-t border-white/5 pt-6">
-                                <button @click="openPanel = (openPanel === 2 ? null : 2)" class="text-xs uppercase tracking-wider font-mono font-bold bg-white text-premiumDark px-6 py-3 rounded-xl hover:bg-utaOrange hover:text-white transition-all duration-300 flex items-center gap-1">
-                                    <span x-text="openPanel === 2 ? 'Hide Architectural Deep-Dive' : 'Architectural Deep-Dive'"></span>
-                                    <i data-lucide="chevron-down" class="w-4 h-4 transition duration-300" :class="openPanel === 2 ? 'rotate-180' : ''"></i>
-                                </button>
-                                <a href="https://github.com/kriti613" target="_blank" class="text-xs uppercase tracking-wider font-mono font-bold border border-white/10 px-6 py-3 rounded-xl text-gray-300 hover:bg-white/5 transition flex items-center gap-2"><i data-lucide="code-2" class="w-3.5 h-3.5"></i> Inspect Codebase</a>
-                            </div>
-                            
-                            <!-- Architectural Accordion Draw -->
-                            <div x-show="openPanel === 2" x-collapse class="mt-6 pt-6 border-t border-white/5 text-xs text-gray-400 space-y-4 font-light">
-                                <div class="grid grid-cols-3 gap-4 font-mono text-[11px] mb-2 text-gray-300">
-                                    <div class="p-2.5 bg-white/5 rounded-lg border border-white/5"><span class="text-utaOrange block font-bold mb-0.5">VOLUME</span> Over 321,000 system tracking records parsed seamlessly.</div>
-                                    <div class="p-2.5 bg-white/5 rounded-lg border border-white/5"><span class="text-blue-400 block font-bold mb-0.5">GOVERNANCE</span> Programmatic deduplication, null-handling, and schema validation.</div>
-                                    <div class="p-2.5 bg-white/5 rounded-lg border border-white/5"><span class="text-emerald-400 block font-bold mb-0.5">BI OUTPUTS</span> Structured optimized analytical tables to feed analytical models.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Mini Secondary Technical Project Card Deck -->
-            <div class="mt-16">
-                <h3 class="text-lg font-display font-bold mb-8 flex items-center text-white font-mono uppercase tracking-widest text-sm">
-                    <span class="w-6 h-[2px] bg-utaOrange mr-3"></span> Supplementary Implementations
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="p-8 rounded-2xl bg-premiumDark border border-white/5 hover:border-white/10 transition-all duration-300">
-                        <div class="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-utaOrange mb-6"><i data-lucide="pie-chart" class="w-5 h-5"></i></div>
-                        <h4 class="font-display font-bold text-lg text-white mb-2">Customer Churn Analytics Ecosystem</h4>
-                        <p class="text-xs text-gray-400 font-light leading-relaxed mb-4">Wrote extensive operational validation queries to extract data, configuring advanced Power BI dashboard tracking metrics to address a 20.37% loss rate.</p>
-                        <span class="inline-block text-[10px] font-mono bg-white/5 text-gray-300 border border-white/5 px-2.5 py-1 rounded">Power BI Models & DAX</span>
-                    </div>
-                    
-                    <div class="p-8 rounded-2xl bg-premiumDark border border-white/5 hover:border-white/10 transition-all duration-300">
-                        <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-6"><i data-lucide="terminal" class="w-5 h-5"></i></div>
-                        <h4 class="font-display font-bold text-lg text-white mb-2">Sarcastic Guru Conversational Layer</h4>
-                        <p class="text-xs text-gray-400 font-light leading-relaxed mb-4">Persona-driven interactive system featuring modular rolling window context tracking, prompt engineering matrices, and sentiment validation APIs.</p>
-                        <span class="inline-block text-[10px] font-mono bg-white/5 text-gray-300 border border-white/5 px-2.5 py-1 rounded">Gemini API Framework</span>
-                    </div>
-
-                    <div class="p-8 rounded-2xl bg-premiumDark border border-white/5 hover:border-white/10 transition-all duration-300">
-                        <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-6"><i data-lucide="trending-up" class="w-5 h-5"></i></div>
-                        <h4 class="font-display font-bold text-lg text-white mb-2">Propensity To Leave Analytics</h4>
-                        <p class="text-xs text-gray-400 font-light leading-relaxed mb-4">Built targeted regression modeling protocols to accurately calculate individual operational departure coefficients for strategic HR asset protection.</p>
-                        <span class="inline-block text-[10px] font-mono bg-white/5 text-gray-300 border border-white/5 px-2.5 py-1 rounded">Statistical Regression</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Technical Arsenal Capability Grid Section -->
-    <section id="skills" class="py-32 border-y border-white/5 bg-premiumDark/30 relative z-10">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="text-center max-w-xl mx-auto mb-24">
-                <div class="inline-block text-xs font-mono tracking-widest text-utaOrange uppercase mb-3">Enterprise Suite capabilities</div>
-                <h2 class="text-4xl font-display font-extrabold text-white tracking-tight">The Technical Stack</h2>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 text-sm">
-                <!-- Group 1 -->
-                <div class="premium-glass p-8 rounded-2xl border-white/5 space-y-6">
-                    <h3 class="font-display font-bold text-white text-base tracking-wide flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-utaOrange"></span> Analytics & BI</h3>
-                    <ul class="space-y-3 font-mono text-xs text-gray-400">
-                        <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-utaOrange shrink-0 mt-0.5"></i> SQL (Complex Queries, CTEs, Windowing)</li>
-                        <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-utaOrange shrink-0 mt-0.5"></i> Advanced DAX Performance Architecture</li>
-                        <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-utaOrange shrink-0 mt-0.5"></i> Power Query / M Language Logic</li>
-                        <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-utaOrange shrink-0 mt-0.5"></i> Semantic Modeling & Tableau Suites</li>
-                    </ul>
-                </div>
-                <!-- Group 2 -->
-                <div class="premium-glass p-8 rounded-2xl border-white/5 space-y-6">
-                    <h3 class="font-display font-bold text-white text-base tracking-wide flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-400"></span> Data Science</h3>
-                    <ul class="space-y-3 font-mono text-xs text-gray-400">
-                        <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-blue-400 shrink-0 mt-0.5"></i> Python Core (Pandas, NumPy, Scikit-Learn)</li>
-                        <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-blue-400 shrink-0 mt-0.5"></i> Automation Scripting Ecosystems</li>
-                        <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-blue-400 shrink-0 mt-0.5"></i> Statistical Modeling & Predictions</li>
-                        <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-blue-400 shrink-0 mt-0.5"></i> Data Quality Pipeline Engineering</li>
-                    </ul>
-                </div>
-                <!-- Group 3 -->
-                <div class="premium-glass p-8 rounded-2xl border-white/5 space-y-6">
-                    <h3 class="font-display font-bold text-white text-base tracking-wide flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-utaOrange"></span> Applied GenAI</h3>
-                    <ul class="space-y-3 font-mono text-xs text-gray-400">
-                        <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-utaOrange shrink-0 mt-0.5"></i> OpenAI API Suite Integration</li>
-                        <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-utaOrange shrink-0 mt-0.5"></i> LangChain Orchestration Frameworks</li>
-                        <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-utaOrange shrink-0 mt-0.5"></i> Retrieval-Augmented Generation (RAG)</li>
-                        <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-utaOrange shrink-0 mt-0.5"></i> Vector Database Management (FAISS)</li>
-                    </ul>
-                </div>
-                <!-- Group 4 -->
-                <div class="premium-glass p-8 rounded-2xl border-white/5 space-y-6">
-                    <h3 class="font-display font-bold text-white text-base tracking-wide flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-400"></span> Business Analysis</h3>
-                    <ul class="space-y-3 font-mono text-xs text-gray-400">
-                        <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-blue-400 shrink-0 mt-0.5"></i> Requirements Gathering & Architecture</li>
-                        <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-blue-400 shrink-0 mt-0.5"></i> User Stories & Acceptance Definition</li>
-                        <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-blue-400 shrink-0 mt-0.5"></i> User Acceptance Testing Coordination</li>
-                        <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-blue-400 shrink-0 mt-0.5"></i> Cross-Functional Agile Delivery Systems</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Professional Timeline Sequence Section -->
-    <section id="experience" class="py-32 relative z-10">
-        <div class="max-w-4xl mx-auto px-6 relative">
-            <div class="text-center mb-24">
-                <div class="inline-block text-xs font-mono tracking-widest text-utaOrange uppercase mb-3">Career Progression Node</div>
-                <h2 class="text-4xl font-display font-extrabold text-white tracking-tight">The Experience Matrix</h2>
-            </div>
-            
-            <div class="relative border-l border-white/10 ml-4 md:ml-32 space-y-16">
-                
-                <!-- Experience Layer 1: DoJoGa -->
-                <div class="relative pl-8 group">
-                    <div class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-utaOrange ring-4 ring-orange-500/20 group-hover:bg-white transition duration-300"></div>
-                    
-                    <!-- Floating Dynamic Timeline Tag for Desktop screens -->
-                    <div class="hidden md:block absolute -left-36 top-0 text-right w-28 font-mono text-xs text-utaOrange font-bold tracking-wider uppercase">Feb 2026 — Present</div>
-                    
-                    <div class="space-y-2">
-                        <span class="md:hidden block font-mono text-xs text-utaOrange font-bold tracking-wider uppercase mb-1">Feb 2026 — Present</span>
-                        <div class="flex flex-wrap items-baseline justify-between gap-2">
-                            <h3 class="text-xl font-display font-bold text-white group-hover:text-utaOrange transition duration-300">Software Engineer Intern</h3>
-                            <span class="text-xs font-mono bg-white/5 border border-white/5 text-gray-400 px-2.5 py-0.5 rounded-md">DoJoGa</span>
-                        </div>
-                        <p class="text-xs text-gray-500 font-mono italic">Core Scope: Operational Data Strategy & System Prototyping</p>
-                        <ul class="text-gray-400 space-y-2.5 pt-3 text-xs sm:text-sm font-light leading-relaxed">
-                            <li class="flex gap-2"><span class="text-utaOrange font-mono select-none">•</span> Translates complex process dependencies into targeted SQL, Python data cleaning scripts, and structured Power BI reporting suites.</li>
-                            <li class="flex gap-2"><span class="text-utaOrange font-mono select-none">•</span> Architectures custom data staging processes featuring granular schema safety checks and automated pipeline health metrics.</li>
-                            <li class="flex gap-2"><span class="text-utaOrange font-mono select-none">•</span> Engineers custom conversational layers using enterprise LLM API blocks and context-aware system logic inside cross-functional structures.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Experience Layer 2: Tech Mahindra Associate -->
-                <div class="relative pl-8 group">
-                    <div class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-blue-500 ring-4 ring-blue-500/20 group-hover:bg-white transition duration-300"></div>
-                    <div class="hidden md:block absolute -left-36 top-0 text-right w-28 font-mono text-xs text-blue-400 font-bold tracking-wider uppercase">Jun 2022 — Dec 2023</div>
-                    
-                    <div class="space-y-2">
-                        <span class="md:hidden block font-mono text-xs text-blue-400 font-bold tracking-wider uppercase mb-1">Jun 2022 — Dec 2023</span>
-                        <div class="flex flex-wrap items-baseline justify-between gap-2">
-                            <h3 class="text-xl font-display font-bold text-white group-hover:text-blue-400 transition duration-300">Associate Software Engineer</h3>
-                            <span class="text-xs font-mono bg-white/5 border border-white/5 text-gray-400 px-2.5 py-0.5 rounded-md">Tech Mahindra</span>
-                        </div>
-                        <p class="text-xs text-gray-500 font-mono italic">Core Scope: Enterprise Pharmaceutical Analytics Execution</p>
-                        <ul class="text-gray-400 space-y-2.5 pt-3 text-xs sm:text-sm font-light leading-relaxed">
-                            <li class="flex gap-2"><span class="text-blue-400 font-mono select-none">•</span> Gathered core system parameters for major clinical management users, configuring over 10 active tracking visualization platforms that reduced enterprise metric reporting defects by 30%.</li>
-                            <li class="flex gap-2"><span class="text-blue-400 font-mono select-none">•</span> Managed specialized data cleaning scripts and built production-ready dashboard assets tracking executive KPIs, eliminating manual operational lag by 20%.</li>
-                            <li class="flex gap-2"><span class="text-blue-400 font-mono select-none">•</span> Coordinated testing lifecycles, mapped workflow logic documentation, and expanded database operational performance margins by 20%.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Experience Layer 3: Tech Mahindra Intern -->
-                <div class="relative pl-8 group">
-                    <div class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-gray-600 ring-4 ring-gray-600/20 group-hover:bg-white transition duration-300"></div>
-                    <div class="hidden md:block absolute -left-36 top-0 text-right w-28 font-mono text-xs text-gray-500 font-bold tracking-wider uppercase">Jan 2022 — Jun 2022</div>
-                    
-                    <div class="space-y-2">
-                        <span class="md:hidden block font-mono text-xs text-gray-500 font-bold tracking-wider uppercase mb-1">Jan 2022 — Jun 2022</span>
-                        <div class="flex flex-wrap items-baseline justify-between gap-2">
-                            <h3 class="text-xl font-display font-bold text-white group-hover:text-white transition duration-300">Software Engineer Intern</h3>
-                            <span class="text-xs font-mono bg-white/5 border border-white/5 text-gray-400 px-2.5 py-0.5 rounded-md">Tech Mahindra</span>
-                        </div>
-                        <ul class="text-gray-400 space-y-2.5 pt-3 text-xs sm:text-sm font-light leading-relaxed">
-                            <li class="flex gap-2"><span class="text-gray-500 font-mono select-none">•</span> Built standard foundational scripting sets in database query languages, Python code bases, and structural pipeline configurations.</li>
-                            <li class="flex gap-2"><span class="text-gray-500 font-mono select-none">•</span> Mapped data translation dependencies and reduced incoming technical teammate ramp timelines by 30% via specialized process training blueprints.</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Institutional Leadership & Core Strategy Blueprint -->
-    <section class="py-32 bg-premiumDark/40 relative border-t border-white/5 z-10">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-16 items-center">
-            
-            <div class="lg:col-span-6 space-y-6">
-                <div class="inline-block text-xs font-mono tracking-widest text-utaOrange uppercase">Operational Philosophy</div>
-                <h2 class="text-4xl font-display font-extrabold text-white tracking-tight">Technical Core, <br><span class="text-orange-gradient">Strategic Execution.</span></h2>
-                <p class="text-gray-400 font-light leading-relaxed text-sm sm:text-base">
-                    My career path bridges structural platform engineering and core product metrics. I resolve a recurring corporate vulnerability: <em class="text-white not-italic font-normal">the severe disconnect between data pipeline infrastructure and actionable executive strategy.</em>
-                </p>
-                <p class="text-gray-400 font-light leading-relaxed text-sm sm:text-base">
-                    By combining robust data normalization layers with intuitive dashboard design and advanced conversational language APIs, I build analytical applications that explain the story behind the metrics.
-                </p>
-                
-                <div class="grid grid-cols-2 gap-4 pt-4 font-mono text-xs">
-                    <div class="p-4 rounded-xl premium-glass border-l-2 border-utaBlue">
-                        <h4 class="font-bold text-white mb-1">Academic Context</h4>
-                        <p class="text-gray-400 text-[11px] leading-relaxed">MS Business Analytics <br>University of Texas, Arlington</p>
-                    </div>
-                    <div class="p-4 rounded-xl premium-glass border-l-2 border-utaOrange">
-                        <h4 class="font-bold text-white mb-1">Target Alignment</h4>
-                        <p class="text-gray-400 text-[11px] leading-relaxed">Business Analyst / Data Science / Business Intelligence Roles</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Leadership Node Column -->
-            <div class="lg:col-span-6 premium-glass p-8 sm:p-10 rounded-[2.5rem] border-white/5 relative overflow-hidden space-y-8">
-                <div class="absolute -right-6 -top-6 text-white/5 font-display text-9xl font-bold select-none pointer-events-none">“</div>
-                <h3 class="text-xl font-display font-bold text-white relative z-10 border-b border-white/5 pb-4">Institutional Presence & Accolades</h3>
-                
-                <div class="space-y-6">
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-utaOrange shrink-0"><i data-lucide="crown" class="w-5 h-5"></i></div>
-                        <div>
-                            <h4 class="font-display font-bold text-white text-sm">President — Open Education Student Advocacy Group</h4>
-                            <p class="text-xs text-gray-400 font-light mt-1 leading-relaxed">Directing university-wide strategic initiatives for OER resource scaling, policy architecture, and leadership recruitment tracking.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-blue-400 shrink-0"><i data-lucide="trophy" class="w-5 h-5"></i></div>
-                        <div>
-                            <h4 class="font-display font-bold text-white text-sm">UTA Datathon Individual Champion</h4>
-                            <p class="text-xs text-gray-400 font-light mt-1 leading-relaxed">Awarded 1st place solo configuration honor for building custom interface layouts combined with complex algorithmic chat pipeline architectures.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Unified Strategic Call-To-Action Section -->
-    <section id="contact" class="py-32 bg-premiumDark border-t border-white/5 relative overflow-hidden z-10">
-        <div class="absolute -bottom-48 left-1/3 w-96 h-96 bg-utaOrange/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="header-container">
+        <h1>KRITI GUPTA</h1> [cite: 2]
+        <div class="subtitle">Business Analyst & Software Engineer</div> [cite: 5, 23]
         
-        <div class="max-w-4xl mx-auto px-6 text-center space-y-8 relative z-10">
-            <h2 class="text-4xl sm:text-5xl font-display font-extrabold text-white tracking-tight">Initiate An Analytical Solution.</h2>
-            <p class="text-gray-400 font-light max-w-xl mx-auto text-sm sm:text-base">
-                I am actively evaluating opportunities within enterprise business analysis teams, strategic modeling layers, and applied automation tracks.
-            </p>
-            
-            <div class="w-12 h-[1px] bg-white/10 mx-auto"></div>
-            
-            <!-- Direct Interface Nodes Grid -->
-            <div class="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs font-mono font-bold tracking-wider uppercase">
-                <a href="mailto:kritigupta0613@gmail.com" class="flex items-center gap-2 premium-glass border-white/5 px-6 py-3 rounded-xl text-gray-300 hover:text-white hover:border-utaOrange transition-all duration-300"><i data-lucide="mail" class="w-4 h-4 text-utaOrange"></i> kritigupta0613@gmail.com</a>
-                <a href="https://www.linkedin.com/in/kriti-guptaaa/" target="_blank" class="flex items-center gap-2 premium-glass border-white/5 px-6 py-3 rounded-xl text-gray-300 hover:text-white hover:border-blue-400 transition-all duration-300"><i data-lucide="linkedin" class="w-4 h-4 text-blue-400"></i> LinkedIn Link</a>
-                <a href="https://github.com/kriti613" target="_blank" class="flex items-center gap-2 premium-glass border-white/5 px-6 py-3 rounded-xl text-gray-300 hover:text-white hover:border-white transition-all duration-300"><i data-lucide="github" class="w-4 h-4 text-white"></i> GitHub Code base</a>
-            </div>
+        <div class="cta-container">
+            <a href="https://github.com" target="_blank" class="social-btn" aria-label="GitHub">
+                <i data-lucide="github"></i>
+            </a>
+
+            <a href="https://linkedin.com" target="_blank" class="social-btn" aria-label="LinkedIn">
+                <i data-lucide="linkedin"></i>
+            </a>
+
+            <a href="mailto:kritigupta0613@gmail.com" class="talk-btn">LET'S TALK</a> 
         </div>
-    </section>
+    </div>
 
-    <!-- Global Footer Stack -->
-    <footer class="py-12 border-t border-white/5 bg-[#05070C] text-center font-mono text-[10px] tracking-widest text-gray-600 relative z-10">
-        <p>&copy; 2026 Kriti Gupta. Scaled with Tailwind Engine, Alpine Component Architecture, and Mathematical Precision.</p>
-    </footer>
-
-    <!-- Initialize Vector Graphics Package -->
     <script>
-        lucide.createIcons();
+        document.addEventListener("DOMContentLoaded", function() {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            } else {
+                console.error("Lucide library failed to load via CDN.");
+            }
+        });
     </script>
 </body>
 </html>
