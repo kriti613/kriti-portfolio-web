@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kriti Gupta | Analytics & AI Builder Portfolio</title>
-    <meta name="description" content="Portfolio of Kriti Gupta - Data Analyst, AI Builder, and Analytics Engineer. Specializing in decision-ready dashboards and GenAI solutions.">
+    <title>Kriti Gupta | Analytics & AI Engineer Portfolio</title>
+    <meta name="description" content="Portfolio of Kriti Gupta - Business Analyst, Data Analyst, and AI Builder. Specializing in decision-ready dashboards, predictive pipelines, and GenAI solutions.">
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Stable UMD Build for Lucide Icons -->
     <script src="https://unpkg.com/lucide@0.475.0/dist/umd/lucide.min.js"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,10 +17,11 @@
           theme: {
             extend: {
               colors: {
-                utaBlue: '#002868',
-                utaOrange: '#F58025',
-                charcoal: '#1A1A1A',
-                offWhite: '#FAFAFA',
+                papayaOrange: '#F58025',
+                charcoalBg: '#0B0C10',
+                cardDark: '#1F2833',
+                slateText: '#C5C6C7',
+                electricBlue: '#45A29E'
               }
             }
           }
@@ -27,325 +29,374 @@
     </script>
 
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FAFAFA; color: #1A1A1A; }
-        .glass-nav { background: rgba(250, 250, 250, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0B0C10; color: #C5C6C7; }
+        .glass-nav { background: rgba(11, 12, 16, 0.85); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.05); }
         
-        /* UTA Inspired Gradient */
+        /* Racing Papaya Gradient */
         .text-gradient { 
-            background: linear-gradient(135deg, #002868 0%, #F58025 100%); 
+            background: linear-gradient(135deg, #FFFFFF 0%, #F58025 100%); 
             -webkit-background-clip: text; 
             -webkit-text-fill-color: transparent; 
         }
         
-        .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,40,104,0.08); }
+        .card-hover { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid rgba(255,255,255,0.03); }
+        .card-hover:hover { 
+            transform: translateY(-6px); 
+            border-color: rgba(245, 128, 37, 0.3);
+            box-shadow: 0 20px 40px rgba(245,128,37,0.05); 
+        }
         
-        .bg-grid { background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 30px 30px; }
+        .bg-grid { background-image: radial-gradient(rgba(245, 128, 37, 0.05) 1px, transparent 1px); background-size: 32px 32px; }
         
-        /* Custom Badge Styling */
-        .badge-uta { background: #E6E9EF; color: #002868; border: 1px solid #CCD4E1; }
-        .accent-orange { color: #F58025; }
-        .accent-blue { color: #002868; }
-        
-        /* Custom Button */
-        .btn-primary { @apply bg-utaBlue text-white hover:bg-black transition-all duration-300 shadow-lg shadow-blue-900/10; }
-        .btn-outline { @apply border border-utaOrange text-utaOrange hover:bg-utaOrange hover:text-white transition-all duration-300; }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0B0C10; }
+        ::-webkit-scrollbar-thumb { background: #1F2833; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #F58025; }
     </style>
 </head>
-<body class="antialiased overflow-x-hidden">
+<body class="antialiased overflow-x-hidden text-slateText">
 
+    <!-- Navigation Header -->
     <nav class="fixed w-full z-50 glass-nav">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="font-extrabold text-xl tracking-tighter text-utaBlue">KRITI<span class="text-utaOrange">.</span>G</div>
+            <div class="font-extrabold text-xl tracking-tighter text-white">KRITI<span class="text-papayaOrange">.</span>G</div>
             
-            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
-                <a href="#home" class="hover:text-utaOrange transition">Home</a>
-                <a href="#projects" class="hover:text-utaOrange transition">Projects</a>
-                <a href="#skills" class="hover:text-utaOrange transition">Skills</a>
-                <a href="#experience" class="hover:text-utaOrange transition">Experience</a>
-                <a href="#contact" class="hover:text-utaOrange transition">Contact</a>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-400">
+                <a href="#home" class="hover:text-papayaOrange transition duration-300">Home</a>
+                <a href="#projects" class="hover:text-papayaOrange transition duration-300">Projects</a>
+                <a href="#skills" class="hover:text-papayaOrange transition duration-300">Skills</a>
+                <a href="#experience" class="hover:text-papayaOrange transition duration-300">Experience</a>
+                <a href="#contact" class="hover:text-papayaOrange transition duration-300">Contact</a>
             </div>
 
             <div class="flex items-center space-x-4">
-                <a href="https://github.com/kriti613" class="text-gray-400 hover:text-utaBlue transition"><i data-lucide="github" class="w-5 h-5"></i></a>
-                <a href="https://www.linkedin.com/in/kriti-guptaaa/" class="text-gray-400 hover:text-utaBlue transition"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
-                <a href="#contact" class="hidden lg:block border border-utaBlue text-utaBlue px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-utaBlue hover:text-white transition">Book a Call</a>
+                <a href="https://github.com/kriti613" target="_blank" class="text-gray-400 hover:text-white transition duration-300"><i data-lucide="github" class="w-5 h-5"></i></a>
+                <a href="https://www.linkedin.com/in/kriti-guptaaa/" target="_blank" class="text-gray-400 hover:text-papayaOrange transition duration-300"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                <a href="#contact" class="hidden lg:block border border-papayaOrange text-papayaOrange px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-papayaOrange hover:text-black transition duration-300">Let's Talk</a>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="relative pt-40 pb-24 overflow-hidden bg-grid">
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-44 pb-28 overflow-hidden bg-grid">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
             <div class="relative z-10">
                 <div class="flex flex-wrap gap-3 mb-6">
-                    <span class="badge-uta px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">UTA Datathon Winner</span>
-                    <span class="badge-uta px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border-utaOrange/30">Business Analytics</span>
+                    <span class="bg-papayaOrange/10 text-papayaOrange border border-papayaOrange/20 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">PL-300 Certified</span>
+                    <span class="bg-white/5 text-white border border-white/10 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">3+ Years Experience</span>
                 </div>
-                <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-utaBlue">
-                    Building <span class="text-gradient">Decision-Ready</span> AI & Analytics.
+                <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-white">
+                    Engineered for <span class="text-gradient">Precision.</span> Built for Impact.
                 </h1>
-                <p class="text-xl text-gray-600 mb-10 leading-relaxed max-w-xl">
-                    I convert messy data into actionable outcomes. From automated EDA assistants to retention modeling, I build the bridges between raw numbers and business strategy.
+                <p class="text-lg text-gray-400 mb-10 leading-relaxed max-w-xl">
+                    I translate high-dimensional data systems into robust business strategies. Bridging software engineering rigor with advanced analytics to deliver decision-ready solutions.
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <a href="#projects" class="bg-utaBlue text-white px-8 py-4 rounded-xl font-bold hover:bg-black transition flex items-center shadow-xl shadow-utaBlue/20">
-                        View Projects <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                    <a href="#projects" class="bg-papayaOrange text-black px-8 py-4 rounded-xl font-bold hover:bg-white transition duration-300 flex items-center shadow-xl shadow-papayaOrange/10">
+                        Explore Work <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
                     </a>
-                    <a href="#contact" class="bg-white border border-gray-200 px-8 py-4 rounded-xl font-bold hover:border-utaOrange text-gray-700 transition">
-                        Contact Me
+                    <a href="#contact" class="bg-cardDark border border-white/10 px-8 py-4 rounded-xl font-bold hover:border-papayaOrange text-white transition duration-300">
+                        Get in Touch
                     </a>
-                </div>
-                
-                <div class="mt-12 flex items-center space-x-6 text-sm text-gray-500 italic">
-                    <span class="flex items-center"><i data-lucide="award" class="w-4 h-4 mr-2 text-utaOrange"></i> 2nd Place UTA Symposium</span>
-                    <span class="flex items-center"><i data-lucide="library" class="w-4 h-4 mr-2 text-utaOrange"></i> UTA Libraries Assistant</span>
                 </div>
             </div>
             
+            <!-- Restored & Framed Headshot Geometry -->
             <div class="relative flex justify-center lg:justify-end">
-                <div class="relative w-80 h-96 lg:w-96 lg:h-[30rem] rounded-3xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500 border-4 border-white">
-                    <img src="https://raw.githubusercontent.com/kriti613/kriti-portfolio-web/main/kriti-pic.jpeg" alt="Kriti Gupta Headshot" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-utaBlue/40 to-transparent"></div>
+                <div class="relative w-80 h-96 lg:w-96 lg:h-[30rem] rounded-3xl overflow-hidden shadow-2xl border-4 border-cardDark bg-cardDark">
+                    <img src="https://raw.githubusercontent.com/kriti613/kriti-portfolio-web/main/kriti-pic.jpeg" alt="Kriti Gupta Headshot" class="w-full h-full object-cover filtering-none grayscale-[20%] hover:grayscale-0 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoalBg via-transparent to-transparent"></div>
                 </div>
-                <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl hidden md:block border border-gray-100">
-                    <div class="text-utaBlue font-bold text-2xl">2025</div>
-                    <div class="text-gray-400 text-xs font-semibold uppercase tracking-widest">MS Analytics Candidate</div>
+                <div class="absolute -bottom-4 -left-4 bg-cardDark p-5 rounded-2xl shadow-xl border border-white/5 hidden md:block">
+                    <div class="text-papayaOrange font-bold text-2xl">STEM</div>
+                    <div class="text-gray-400 text-[10px] font-semibold uppercase tracking-widest">Business & Data Analyst</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 bg-white">
+    <!-- Strategic Pillars -->
+    <section class="py-16 bg-charcoalBg border-t border-white/5">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 card-hover">
-                    <i data-lucide="bot" class="w-10 h-10 accent-blue mb-4"></i>
-                    <h3 class="text-lg font-bold mb-2">GenAI Builders</h3>
-                    <p class="text-gray-500 text-sm">Custom AI assistants for document Q&A and automated business insights.</p>
+                <div class="p-8 rounded-2xl bg-cardDark card-hover">
+                    <i data-lucide="terminal" class="w-8 h-8 text-papayaOrange mb-4"></i>
+                    <h3 class="text-white text-lg font-bold mb-2">Analytics Engineering</h3>
+                    <p class="text-gray-400 text-sm">Building clean star schemas, pipeline architectures, and optimized data models.</p>
                 </div>
-                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 card-hover">
-                    <i data-lucide="bar-chart-3" class="w-10 h-10 accent-orange mb-4"></i>
-                    <h3 class="text-lg font-bold mb-2">Advanced BI</h3>
-                    <p class="text-gray-500 text-sm">Interactive stakeholder dashboards focused on storytelling and ROI.</p>
+                <div class="p-8 rounded-2xl bg-cardDark card-hover">
+                    <i data-lucide="pie-chart" class="w-8 h-8 text-papayaOrange mb-4"></i>
+                    <h3 class="text-white text-lg font-bold mb-2">Business Intelligence</h3>
+                    <p class="text-gray-400 text-sm">Interactive Power BI and Tableau setups with advanced DAX execution.</p>
                 </div>
-                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 card-hover">
-                    <i data-lucide="database" class="w-10 h-10 accent-blue mb-4"></i>
-                    <h3 class="text-lg font-bold mb-2">Predictive ML</h3>
-                    <p class="text-gray-500 text-sm">Churn, loan default, and PTL modeling with high interpretability.</p>
+                <div class="p-8 rounded-2xl bg-cardDark card-hover">
+                    <i data-lucide="cpu" class="w-8 h-8 text-papayaOrange mb-4"></i>
+                    <h3 class="text-white text-lg font-bold mb-2">Applied Data Science</h3>
+                    <p class="text-gray-400 text-sm">Predictive churn modeling, segmentation, and scikit-learn engineering.</p>
                 </div>
-                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 card-hover">
-                    <i data-lucide="users" class="w-10 h-10 accent-orange mb-4"></i>
-                    <h3 class="text-lg font-bold mb-2">Leadership</h3>
-                    <p class="text-gray-500 text-sm">Leading OESAG initiatives and optimizing library operations.</p>
+                <div class="p-8 rounded-2xl bg-cardDark card-hover">
+                    <i data-lucide="zap" class="w-8 h-8 text-papayaOrange mb-4"></i>
+                    <h3 class="text-white text-lg font-bold mb-2">GenAI Engineering</h3>
+                    <p class="text-gray-400 text-sm">Deploying functional RAG architectures using LLM endpoints and Streamlit.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-24 bg-gray-50">
+    <!-- Featured Projects Section -->
+    <section id="projects" class="py-24 bg-charcoalBg/50 relative">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex justify-between items-end mb-16">
                 <div>
-                    <h2 class="text-4xl font-extrabold mb-4 text-utaBlue">Featured Projects</h2>
-                    <p class="text-gray-600">Selected work bridging Data Science and Software Engineering.</p>
+                    <h2 class="text-4xl font-extrabold mb-3 text-white">Engineering Notebook</h2>
+                    <p class="text-gray-400">Production-grade builds addressing core data and business challenges.</p>
                 </div>
-                <a href="https://github.com/kriti613" class="text-utaOrange font-bold flex items-center hover:underline">
-                    View GitHub <i data-lucide="external-link" class="ml-2 w-4 h-4"></i>
+                <a href="https://github.com/kriti613" target="_blank" class="text-papayaOrange font-bold flex items-center hover:underline text-sm">
+                    View Repositories <i data-lucide="external-link" class="ml-2 w-4 h-4"></i>
                 </a>
             </div>
 
+            <!-- Project Cards Grid Layout -->
             <div class="grid lg:grid-cols-2 gap-8" x-data="{ active: null }">
                 
-                <div class="bg-white rounded-[2rem] overflow-hidden border border-gray-100 shadow-sm card-hover">
-                    <div class="h-64 bg-slate-200 overflow-hidden group">
-                         <img src="https://raw.githubusercontent.com/kriti613/kriti-portfolio-web/main/AviationDashboard.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Aviation AI Dashboard">
+                <!-- NEW PROJECT: Spotify Monday Morning Analytics -->
+                <div class="bg-cardDark rounded-3xl overflow-hidden card-hover">
+                    <div class="h-64 bg-neutral-900 overflow-hidden relative group">
+                         <!-- Visual representation placeholder/image matching user layout style -->
+                         <div class="absolute inset-0 bg-gradient-to-br from-green-900/30 to-charcoalBg z-10"></div>
+                         <div class="w-full h-full flex items-center justify-center text-green-500 font-mono text-xs z-20 absolute">
+                             [ Spotify API x ETL Architecture Integration ]
+                         </div>
                     </div>
                     <div class="p-8">
                         <div class="flex gap-2 mb-4">
-                            <span class="text-[10px] font-bold px-2 py-1 bg-blue-50 text-utaBlue rounded uppercase">OpenAI API</span>
-                            <span class="text-[10px] font-bold px-2 py-1 bg-orange-50 text-utaOrange rounded uppercase">Streamlit</span>
+                            <span class="text-[10px] font-bold px-2.5 py-1 bg-green-500/10 text-green-400 rounded border border-green-500/20 uppercase tracking-wider">Spotify API</span>
+                            <span class="text-[10px] font-bold px-2.5 py-1 bg-papayaOrange/10 text-papayaOrange rounded border border-papayaOrange/20 uppercase tracking-wider">Python ETL</span>
                         </div>
-                        <h3 class="text-2xl font-bold mb-3 text-utaBlue">Aviation Analytics AI Chatbot</h3>
-                        <p class="text-gray-600 mb-4 line-clamp-2">Automates EDA and insight generation for route optimization and fuel efficiency.</p>
+                        <h3 class="text-2xl font-bold mb-3 text-white">Spotify Monday Morning Analytics</h3>
+                        <p class="text-gray-400 mb-6 line-clamp-2">End-to-end telemetry application capturing, schema-mapping, and transforming active dynamic listening streams into performance dashboards.</p>
                         <div class="flex gap-4">
-                            <button @click="active = (active === 1 ? null : 1)" class="text-sm font-bold bg-utaBlue text-white px-6 py-2 rounded-full hover:bg-black transition">Case Study</button>
-                            <a href="https://www.youtube.com/watch?v=EMaR-ovGTgo" class="text-sm font-bold border border-gray-200 px-6 py-2 rounded-full hover:bg-gray-50 transition">Video</a>
+                            <button @click="active = (active === 3 ? null : 3)" class="text-sm font-bold bg-papayaOrange text-black px-6 py-2.5 rounded-full hover:bg-white transition duration-300">Technical Brief</button>
+                            <a href="https://github.com/kriti613/Spotify-Monday-Morning-Analytics" target="_blank" class="text-sm font-bold border border-white/10 px-6 py-2.5 rounded-full hover:bg-white/5 transition duration-300 flex items-center">
+                                Codebase <i data-lucide="git-branch" class="ml-1.5 w-3.5 h-3.5"></i>
+                            </a>
                         </div>
                         
-                        <div x-show="active === 1" x-collapse class="mt-6 pt-6 border-t border-gray-100 text-sm text-gray-700 space-y-4">
-                            <p><strong>Problem:</strong> Aviation stakeholders struggle to extract insights from fragmented route and cost data.</p>
-                            <p><strong>Approach:</strong> Built a RAG-inspired interface that accepts multi-format files to generate predictive fuel costs.</p>
-                            <p><strong>Outcome:</strong> Provides non-technical users the ability to perform complex profitability analysis via natural language.</p>
+                        <div x-show="active === 3" x-collapse class="mt-6 pt-6 border-t border-white/5 text-sm text-gray-400 space-y-4">
+                            <p><strong>Architecture:</strong> Extracts unstructured telemetry payloads from the Spotify Web API layer, structuring metrics into clean dimensional profiles.</p>
+                            <p><strong>Transformation Pipeline:</strong> Utilizes customized transformation scripts to index listening velocity, genre distributions, and audio feature fluctuations over scheduled intervals.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-[2rem] overflow-hidden border border-gray-100 shadow-sm card-hover">
-                    <div class="h-64 bg-slate-200 overflow-hidden group">
-                         <img src="https://raw.githubusercontent.com/kriti613/kriti-portfolio-web/main/Chatbot-UI.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Chatbot UI">
+                <!-- PROJECT: Aviation Analytics AI Chatbot -->
+                <div class="bg-cardDark rounded-3xl overflow-hidden card-hover">
+                    <div class="h-64 bg-neutral-900 overflow-hidden relative group">
+                         <img src="https://raw.githubusercontent.com/kriti613/kriti-portfolio-web/main/AviationDashboard.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 opacity-60" alt="Aviation AI Dashboard">
                     </div>
                     <div class="p-8">
-                        <div class="flex gap-2 mb-4 text-xs">
-                            <span class="text-[10px] font-bold px-2 py-1 bg-blue-50 text-utaBlue rounded uppercase">Gemini API</span>
-                            <span class="text-[10px] font-bold px-2 py-1 bg-orange-50 text-utaOrange rounded uppercase">Prompt Eng.</span>
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-[10px] font-bold px-2.5 py-1 bg-white/5 text-white rounded border border-white/10 uppercase">OpenAI API</span>
+                            <span class="text-[10px] font-bold px-2.5 py-1 bg-papayaOrange/10 text-papayaOrange rounded border border-papayaOrange/20 uppercase">Streamlit</span>
                         </div>
-                        <h3 class="text-2xl font-bold mb-3 text-utaBlue">Sarcastic Guru (Winner)</h3>
-                        <p class="text-gray-600 mb-4 line-clamp-2">A persona-driven chatbot featuring a custom "Roast Meter" and modular sentiment architecture.</p>
+                        <h3 class="text-2xl font-bold mb-3 text-white">Aviation Analytics AI Chatbot</h3>
+                        <p class="text-gray-400 mb-6 line-clamp-2">Automated EDA engine built to process multi-format fleet operations data and surface route optimization intelligence.</p>
                         <div class="flex gap-4">
-                            <button @click="active = (active === 2 ? null : 2)" class="text-sm font-bold bg-utaBlue text-white px-6 py-2 rounded-full hover:bg-black transition">Case Study</button>
-                            <a href="https://www.youtube.com/watch?v=chbFbRaWtBs" class="text-sm font-bold border border-gray-200 px-6 py-2 rounded-full hover:bg-gray-50 transition">Video</a>
+                            <button @click="active = (active === 1 ? null : 1)" class="text-sm font-bold bg-papayaOrange text-black px-6 py-2.5 rounded-full hover:bg-white transition duration-300">Technical Brief</button>
+                            <a href="https://www.youtube.com/watch?v=EMaR-ovGTgo" target="_blank" class="text-sm font-bold border border-white/10 px-6 py-2.5 rounded-full hover:bg-white/5 transition duration-300">Video Demo</a>
                         </div>
-                        <div x-show="active === 2" x-collapse class="mt-6 pt-6 border-t border-gray-100 text-sm text-gray-700 space-y-4">
-                            <p><strong>Approach:</strong> Designed complex prompt templates to maintain persona consistency while scaling sarcasm intensity.</p>
-                            <p><strong>Obstacle:</strong> Maintaining context during long conversations. Fixed by implementing a rolling window message buffer.</p>
+                        
+                        <div x-show="active === 1" x-collapse class="mt-6 pt-6 border-t border-white/5 text-sm text-gray-400 space-y-4">
+                            <p><strong>Mechanics:</strong> Implemented specialized schema mapping routines to parse and evaluate fuel load factors and airspace telemetry directly inside a natural language framework.</p>
+                            <p><strong>Impact:</strong> Empowers functional non-developer teams to quickly identify high-cost legs and capacity bottlenecks without manually keying complex aggregate scripts.</p>
                         </div>
                     </div>
                 </div>
+
+                <!-- PROJECT: Sarcastic Guru -->
+                <div class="bg-cardDark rounded-3xl overflow-hidden card-hover lg:col-span-2">
+                    <div class="h-64 bg-neutral-900 overflow-hidden relative group">
+                         <img src="https://raw.githubusercontent.com/kriti613/kriti-portfolio-web/main/Chatbot-UI.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 opacity-50" alt="Chatbot UI">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-[10px] font-bold px-2.5 py-1 bg-white/5 text-white rounded border border-white/10 uppercase">Gemini API</span>
+                            <span class="text-[10px] font-bold px-2.5 py-1 bg-papayaOrange/10 text-papayaOrange rounded border border-papayaOrange/20 uppercase">Persona Architecture</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-white">Sarcastic Guru <span class="text-papayaOrange text-sm font-normal ml-2">(UTA Datathon Champion)</span></h3>
+                        <p class="text-gray-400 mb-6">A reactive conversational engine showcasing advanced sentiment classification, custom context tracking buffers, and stateful tracking loops.</p>
+                        <div class="flex gap-4">
+                            <button @click="active = (active === 2 ? null : 2)" class="text-sm font-bold bg-papayaOrange text-black px-6 py-2.5 rounded-full hover:bg-white transition duration-300">Technical Brief</button>
+                            <a href="https://www.youtube.com/watch?v=chbFbRaWtBs" target="_blank" class="text-sm font-bold border border-white/10 px-6 py-2.5 rounded-full hover:bg-white/5 transition duration-300">Video Demo</a>
+                        </div>
+                        <div x-show="active === 2" x-collapse class="mt-6 pt-6 border-t border-white/5 text-sm text-gray-400 space-y-4">
+                            <p><strong>Engineering Strategy:</strong> Programmed a token-efficient conversational buffer wrapper to retain conversational history without overflowing prompt parameter boundaries.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
+            <!-- Mini Explorations Stack -->
             <div class="mt-20">
-                <h3 class="text-xl font-bold mb-8 flex items-center text-utaBlue">
-                    <span class="w-8 h-[2px] bg-utaOrange mr-4"></span> More Analysis & Explorations
+                <h3 class="text-lg font-bold mb-8 flex items-center text-white">
+                    <span class="w-6 h-[1px] bg-papayaOrange mr-4"></span> Core Research Repository
                 </h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="p-6 bg-white border border-gray-100 rounded-2xl">
-                        <h4 class="font-bold mb-2">Telecom Churn Prediction</h4>
-                        <p class="text-xs text-gray-500 mb-4">Random Forest model using ColumnTransformers for pipeline efficiency.</p>
-                        <span class="text-[9px] bg-blue-50 text-utaBlue px-2 py-1 rounded font-bold">Scikit-Learn</span>
+                    <div class="p-6 bg-cardDark rounded-2xl border border-white/5">
+                        <h4 class="font-bold text-white mb-2">Telecom Churn Modeling</h4>
+                        <p class="text-xs text-gray-400 mb-4">Pipeline execution applying random forests to handle customer attrition vectors.</p>
+                        <span class="text-[9px] font-bold text-papayaOrange tracking-wider bg-papayaOrange/10 border border-papayaOrange/20 px-2 py-0.5 rounded uppercase">Scikit-Learn</span>
                     </div>
-                    <div class="p-6 bg-white border border-gray-100 rounded-2xl">
-                        <h4 class="font-bold mb-2">F1 Analytics Dashboard</h4>
-                        <p class="text-xs text-gray-500 mb-4">Tableau dashboard visualizing race constructor and driver performance trends.</p>
-                        <span class="text-[9px] bg-blue-50 text-utaBlue px-2 py-1 rounded font-bold">Tableau</span>
+                    <div class="p-6 bg-cardDark rounded-2xl border border-white/5">
+                        <h4 class="font-bold text-white mb-2">F1 Constructor Optimization</h4>
+                        <p class="text-xs text-gray-400 mb-4">Interactive data arrays isolating pit strategies and car tracking telemetry parameters.</p>
+                        <span class="text-[9px] font-bold text-papayaOrange tracking-wider bg-papayaOrange/10 border border-papayaOrange/20 px-2 py-0.5 rounded uppercase">Tableau / SQL</span>
                     </div>
-                    <div class="p-6 bg-white border border-gray-100 rounded-2xl">
-                        <h4 class="font-bold mb-2">HR Analytics: PTL Modeling</h4>
-                        <p class="text-xs text-gray-500 mb-4">Regression-driven propensity-to-leave scoring for retention strategy.</p>
-                        <span class="text-[9px] bg-blue-50 text-utaBlue px-2 py-1 rounded font-bold">Excel/Regression</span>
+                    <div class="p-6 bg-cardDark rounded-2xl border border-white/5">
+                        <h4 class="font-bold text-white mb-2">HR Attrition Scoring</h4>
+                        <p class="text-xs text-gray-400 mb-4">Custom business logic matrix evaluating employee flight risk coefficients.</p>
+                        <span class="text-[9px] font-bold text-papayaOrange tracking-wider bg-papayaOrange/10 border border-papayaOrange/20 px-2 py-0.5 rounded uppercase">Excel Modeling</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="py-24 bg-white">
+    <!-- Technical Arsenal Matrix -->
+    <section id="skills" class="py-24 bg-charcoalBg border-t border-white/5">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl font-extrabold mb-16 text-center text-utaBlue">Technical Arsenal</h2>
+            <h2 class="text-3xl font-extrabold mb-16 text-center text-white">Core Technology Stack</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 text-sm">
                 <div>
-                    <h3 class="font-bold text-utaOrange uppercase tracking-widest text-xs mb-6">Analytics & BI</h3>
-                    <ul class="space-y-4 font-medium text-gray-700">
-                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaBlue"></i> SQL (Postgres/Spark)</li>
-                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaBlue"></i> Power BI & Tableau</li>
-                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaBlue"></i> Dashboard Storytelling</li>
-                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaBlue"></i> Advanced Excel</li>
+                    <h3 class="font-bold text-papayaOrange uppercase tracking-widest text-xs mb-6">Data Architecture & BI</h3>
+                    <ul class="space-y-4 font-medium text-gray-400">
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-papayaOrange"></i> SQL (Complex Joins & CTEs)</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-papayaOrange"></i> Power BI (Advanced DAX & M)</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-papayaOrange"></i> Tableau Dashboarding</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-papayaOrange"></i> Star Schema / Relational Data</li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="font-bold text-utaBlue uppercase tracking-widest text-xs mb-6">Data Science</h3>
-                    <ul class="space-y-4 font-medium text-gray-700">
-                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaOrange"></i> Python (Pandas/NumPy)</li>
-                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaOrange"></i> Predictive Modeling</li>
-                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaOrange"></i> Feature Engineering</li>
-                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaOrange"></i> Classification/XGBoost</li>
+                    <h3 class="font-bold text-white uppercase tracking-widest text-xs mb-6">Data Science / ML</h3>
+                    <ul class="space-y-4 font-medium text-gray-400">
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-white"></i> Python (Pandas, NumPy)</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-white"></i> Predictive Modeling (SciKit)</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-white"></i> Statistical Analysis & EDA</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-white"></i> Feature Engineering & Pipelines</li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="font-bold text-utaOrange uppercase tracking-widest text-xs mb-6">GenAI & Apps</h3>
-                    <ul class="space-y-4 font-medium text-gray-700">
-                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaBlue"></i> Streamlit Prototyping</li>
-                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaBlue"></i> Prompt Engineering</li>
-                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaBlue"></i> RAG & OpenAI API</li>
-                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaBlue"></i> Vector Search (FAISS)</li>
+                    <h3 class="font-bold text-papayaOrange uppercase tracking-widest text-xs mb-6">GenAI Applications</h3>
+                    <ul class="space-y-4 font-medium text-gray-400">
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-papayaOrange"></i> OpenAI & Gemini API Design</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-papayaOrange"></i> Streamlit App Development</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-papayaOrange"></i> Prompt Engineering Frameworks</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-papayaOrange"></i> Text Vector Processing</li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="font-bold text-utaBlue uppercase tracking-widest text-xs mb-6">Cloud & Engineering</h3>
-                    <ul class="space-y-4 font-medium text-gray-700">
-                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaOrange"></i> Databricks / Delta Lake</li>
-                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaOrange"></i> ASP.NET MVC / C#</li>
-                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaOrange"></i> Git & CI/CD</li>
-                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaOrange"></i> API Development</li>
+                    <h3 class="font-bold text-white uppercase tracking-widest text-xs mb-6">Engineering Foundations</h3>
+                    <ul class="space-y-4 font-medium text-gray-400">
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-white"></i> C# / ASP.NET MVC Structure</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-white"></i> Databricks Workspace Ecosystem</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-white"></i> Git Controls & Repository Tuning</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-white"></i> API Structuring & Integration</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="experience" class="py-24 bg-utaBlue text-white">
+    <!-- Professional Experience Timeline -->
+    <section id="experience" class="py-24 bg-cardDark text-slateText border-t border-b border-white/5">
         <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-4xl font-extrabold mb-16 text-center">Professional Journey</h2>
+            <h2 class="text-4xl font-extrabold mb-16 text-center text-white">Professional Footprint</h2>
             
             <div class="space-y-12">
-                <div class="relative pl-8 border-l-2 border-utaOrange">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-utaOrange"></div>
-                    <div class="mb-2 flex justify-between items-center flex-wrap">
-                        <h3 class="text-xl font-bold">Associate Software Engineer</h3>
-                        <span class="text-orange-400 text-sm font-bold uppercase tracking-widest">Tech Mahindra | 2022 — 2023</span>
+                <!-- Role 1: Associate SE at TechM -->
+                <div class="relative pl-8 border-l-2 border-papayaOrange">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-papayaOrange"></div>
+                    <div class="mb-4 flex justify-between items-start flex-wrap gap-2">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Associate Software Engineer</h3>
+                            <p class="text-papayaOrange font-semibold text-sm">Tech Mahindra</p>
+                        </div>
+                        <span class="text-gray-400 text-xs font-bold uppercase tracking-widest bg-charcoalBg px-3 py-1 rounded border border-white/5">Jul 2022 — Jul 2023</span>
                     </div>
-                    <ul class="text-blue-100/70 space-y-3 mt-4 text-sm leading-relaxed">
-                        <li>• Delivered POCs for internal management sites including SSO and payment gateway integrations.</li>
-                        <li>• Built interactive data dashboards using HTML/CSS/JS, Chart.js, and ASP.NET MVC.</li>
-                        <li>• Developed a mobile quiz application using .NET MAUI and integrated custom APIs.</li>
-                        <li>• Handled critical R&D support tickets while delivering high-impact internal feature updates.</li>
+                    <ul class="space-y-3 text-sm leading-relaxed text-gray-400">
+                        <li class="flex items-start"><span class="text-papayaOrange mr-2">•</span> Converted complex user scenarios into operational, scalable validation modules using ASP.NET MVC, C#, and specialized JavaScript components.</li>
+                        <li class="flex items-start"><span class="text-papayaOrange mr-2">•</span> Built high-performance data processing views using structured SQL schemas and integrated UI presentation libraries (Chart.js), boosting internal management data exploration speed.</li>
+                        <li class="flex items-start"><span class="text-papayaOrange mr-2">•</span> Engineered a standalone responsive evaluation application utilizing .NET MAUI frameworks, securing consistent runtime profiles across distinct mobile deployments.</li>
+                        <li class="flex items-start"><span class="text-papayaOrange mr-2">•</span> Provided deep-dive alternative root-cause logic for core client production tickets, mitigating critical runtime errors inside core processing codebases.</li>
                     </ul>
                 </div>
 
-                <div class="relative pl-8 border-l-2 border-blue-400">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-400"></div>
-                    <div class="mb-2 flex justify-between items-center flex-wrap">
-                        <h3 class="text-xl font-bold">Software Engineer Intern</h3>
-                        <span class="text-blue-300 text-sm font-bold uppercase tracking-widest">Tech Mahindra | Jan — Jun 2022</span>
+                <!-- Role 2: SE Intern at TechM -->
+                <div class="relative pl-8 border-l-2 border-neutral-700">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-neutral-700"></div>
+                    <div class="mb-4 flex justify-between items-start flex-wrap gap-2">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Software Engineer Intern</h3>
+                            <p class="text-neutral-400 font-semibold text-sm">Tech Mahindra</p>
+                        </div>
+                        <span class="text-gray-400 text-xs font-bold uppercase tracking-widest bg-charcoalBg px-3 py-1 rounded border border-white/5">Jan 2022 — Jun 2022</span>
                     </div>
-                    <p class="text-blue-100/70 text-sm">Researched and prototyped ReactJS integrations within legacy ASP.NET projects, reducing UI update lag.</p>
+                    <ul class="space-y-3 text-sm leading-relaxed text-gray-400">
+                        <li class="flex items-start"><span class="text-neutral-500 mr-2">•</span> Conceptualized migration strategies to cleanly wire modular structural framework controls into legacy system configurations.</li>
+                        <li class="flex items-start"><span class="text-neutral-500 mr-2">•</span> Designed modular user interface modules that accelerated overall form processing flow and data delivery operations during test sprints.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-white">
+    <!-- Context & Leadership Summary -->
+    <section class="py-24 bg-charcoalBg">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
             <div>
-                <h2 class="text-4xl font-extrabold mb-8 text-utaBlue">Engineering Core, <br><span class="text-utaOrange">Analytics Mindset.</span></h2>
-                <p class="text-gray-600 leading-relaxed mb-6">
-                    My transition from a Full-Stack Software Engineer to a Business Analyst was driven by a single question: <em>"How do we know if this feature actually drives value?"</em>
+                <h2 class="text-4xl font-extrabold mb-8 text-white">Bridging Software Rigor <br>with <span class="text-papayaOrange">Analytical Vision.</span></h2>
+                <p class="text-gray-400 leading-relaxed mb-6">
+                    My foundational background in software engineering enables me to view data problems differently. I don’t just query data tables—I structure stable, repeatable data systems that are easily audited and perform efficiently at scale.
                 </p>
-                <p class="text-gray-600 leading-relaxed mb-8">
-                    Today, I combine my technical foundation in C# and SQL with advanced ML modeling and GenAI to build tools that don't just show data, but explain it.
+                <p class="text-gray-400 leading-relaxed mb-8">
+                    Whether configuring dynamic DAX schemas inside Power BI or engineering programmatic features in Python, my goal is to extract deep tactical insights that actively drive executive strategy.
                 </p>
                 <div class="grid grid-cols-2 gap-6">
-                    <div class="p-6 bg-gray-50 rounded-2xl border-l-4 border-utaBlue">
-                        <h4 class="font-bold text-sm mb-2 text-utaBlue">Education</h4>
-                        <p class="text-xs text-gray-500">MS Business Analytics (UTA) <br> B.Tech (Electronics)</p>
+                    <div class="p-6 bg-cardDark rounded-2xl border border-white/5">
+                        <h4 class="font-bold text-sm mb-2 text-white">Academic Foundation</h4>
+                        <p class="text-xs text-gray-400">MS in Business Analytics<br>B.Tech in Electronics Engineering</p>
                     </div>
-                    <div class="p-6 bg-orange-50 rounded-2xl border-l-4 border-utaOrange">
-                        <h4 class="font-bold text-sm text-utaOrange mb-2">Availability</h4>
-                        <p class="text-xs text-gray-600 font-medium">Actively seeking full-time roles starting Dec 2025.</p>
+                    <div class="p-6 bg-cardDark rounded-2xl border border-white/5">
+                        <h4 class="font-bold text-sm text-papayaOrange mb-2">Availability Matrix</h4>
+                        <p class="text-xs text-gray-400">Open to full-time Data Analyst, Business Analyst, or Analytics Engineer roles.</p>
                     </div>
                 </div>
             </div>
-            <div class="bg-utaBlue/5 p-10 rounded-[3rem] border border-utaBlue/10 relative overflow-hidden">
-                <div class="absolute top-0 right-0 p-4 opacity-10">
-                    <i data-lucide="quote" class="w-20 h-20 text-utaBlue"></i>
+            
+            <div class="bg-cardDark p-10 rounded-[2rem] border border-white/5 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-5">
+                    <i data-lucide="terminal" class="w-24 h-24 text-white"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-6 italic text-gray-500 relative z-10">"Data is just noise without a narrative."</h3>
+                <h3 class="text-xl font-bold mb-8 italic text-gray-400 relative z-10">"Unlocking operational narrative from enterprise data structures."</h3>
                 <div class="space-y-6 relative z-10">
                     <div class="flex items-start">
-                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mr-4 shrink-0">
-                            <i data-lucide="mic" class="w-5 h-5 text-utaBlue"></i>
+                        <div class="w-12 h-12 bg-charcoalBg rounded-xl border border-white/5 flex items-center justify-center mr-4 shrink-0">
+                            <i data-lucide="users" class="w-5 h-5 text-papayaOrange"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-sm text-utaBlue">President — OESAG</h4>
-                            <p class="text-xs text-gray-500">Leading student advocacy for OER and managing officer recruitment.</p>
+                            <h4 class="font-bold text-sm text-white">President — OESAG Organization</h4>
+                            <p class="text-xs text-gray-400">Spearheading dynamic campus deployment, organizing resource alignment campaigns, and mentoring functional leadership boards.</p>
                         </div>
                     </div>
                     <div class="flex items-start">
-                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mr-4 shrink-0">
-                            <i data-lucide="trophy" class="w-5 h-5 text-utaOrange"></i>
+                        <div class="w-12 h-12 bg-charcoalBg rounded-xl border border-white/5 flex items-center justify-center mr-4 shrink-0">
+                            <i data-lucide="trophy" class="w-5 h-5 text-papayaOrange"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-sm text-utaBlue">Individual Winner</h4>
-                            <p class="text-xs text-gray-500">UTA Datathon: Recognized for best-in-class UI and AI persona architecture.</p>
+                            <h4 class="font-bold text-sm text-white">Datathon Winner</h4>
+                            <p class="text-xs text-gray-400">Ranked top-tier for exceptional user design interfaces and programmatic agent architecture handling complex custom prompts.</p>
                         </div>
                     </div>
                 </div>
@@ -353,30 +404,32 @@
         </div>
     </section>
 
-    <section id="contact" class="py-24 bg-gray-900 text-white overflow-hidden relative">
-        <div class="absolute top-0 right-0 w-64 h-64 bg-utaOrange/10 rounded-full blur-3xl"></div>
+    <!-- Dark Footer / Contact Zone -->
+    <section id="contact" class="py-24 bg-charcoalBg border-t border-white/5 relative overflow-hidden">
+        <div class="absolute bottom-0 right-0 w-80 h-80 bg-papayaOrange/5 rounded-full blur-[120px]"></div>
         <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
-            <h2 class="text-4xl font-extrabold mb-4">Let's Build Something Impactful</h2>
-            <p class="text-gray-400 mb-12">I’m looking for roles in Data/Business Analytics, BI, or Applied AI.</p>
+            <h2 class="text-4xl font-extrabold mb-4 text-white">Initiate a Project Conversation</h2>
+            <p class="text-gray-400 mb-12 max-w-md mx-auto text-sm">Let's discuss how my analytical tooling background and architectural pipelines can accelerate your business operations.</p>
             
             <div class="flex flex-wrap justify-center gap-8 text-sm font-medium">
-                <a href="mailto:kritigupta0613@gmail.com" class="flex items-center text-gray-300 hover:text-utaOrange transition"><i data-lucide="mail" class="mr-2 w-5 h-5"></i> kritigupta0613@gmail.com</a>
-                <a href="https://www.linkedin.com/in/kriti-guptaaa/" class="flex items-center text-gray-300 hover:text-utaOrange transition"><i data-lucide="linkedin" class="mr-2 w-5 h-5"></i> LinkedIn</a>
-                <a href="https://github.com/kriti613" class="flex items-center text-gray-300 hover:text-utaOrange transition"><i data-lucide="github" class="mr-2 w-5 h-5"></i> GitHub</a>
+                <a href="mailto:kritigupta0613@gmail.com" class="flex items-center text-gray-400 hover:text-papayaOrange transition duration-300"><i data-lucide="mail" class="mr-2 w-4 h-4"></i> kritigupta0613@gmail.com</a>
+                <a href="https://www.linkedin.com/in/kriti-guptaaa/" target="_blank" class="flex items-center text-gray-400 hover:text-papayaOrange transition duration-300"><i data-lucide="linkedin" class="mr-2 w-4 h-4"></i> LinkedIn Connection</a>
+                <a href="https://github.com/kriti613" target="_blank" class="flex items-center text-gray-400 hover:text-papayaOrange transition duration-300"><i data-lucide="github" class="mr-2 w-4 h-4"></i> GitHub Profile</a>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-gray-800 bg-gray-900 text-center text-xs text-gray-500">
-        <p>&copy; 2024 Kriti Gupta. Built with Tailwind and Precision.</p>
+    <footer class="py-12 border-t border-white/5 bg-charcoalBg text-center text-[11px] text-gray-600">
+        <p>&copy; 2026 Kriti Gupta. Built with structured Tailwind architecture.</p>
     </footer>
 
+    <!-- Safe Icon Renderer Execution Loop -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
             } else {
-                console.error("Lucide failed to mount via CDN wrapper.");
+                console.error("Lucide runtime context could not resolve module paths components.");
             }
         });
     </script>
