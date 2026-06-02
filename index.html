@@ -1,126 +1,384 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kriti Gupta - Portfolio</title>
+    <title>Kriti Gupta | Analytics & AI Builder Portfolio</title>
+    <meta name="description" content="Portfolio of Kriti Gupta - Data Analyst, AI Builder, and Analytics Engineer. Specializing in decision-ready dashboards and GenAI solutions.">
     
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Stable UMD Build for Lucide Icons to prevent runtime engine collision -->
     <script src="https://unpkg.com/lucide@0.475.0/dist/umd/lucide.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                utaBlue: '#002868',
+                utaOrange: '#F58025',
+                charcoal: '#1A1A1A',
+                offWhite: '#FAFAFA',
+              }
+            }
+          }
+        }
+    </script>
 
     <style>
-        /* Base styles matching your modern dark theme layout */
-        body {
-            background-color: #0d1117;
-            color: #c9d1d9;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FAFAFA; color: #1A1A1A; }
+        .glass-nav { background: rgba(250, 250, 250, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        
+        /* UTA Inspired Gradient */
+        .text-gradient { 
+            background: linear-gradient(135deg, #002868 0%, #F58025 100%); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
         }
-
-        .header-container {
-            text-align: center;
-            max-width: 800px;
-            margin-bottom: 30px;
-        }
-
-        h1 {
-            color: #ffffff;
-            margin-bottom: 5px;
-            letter-spacing: 1px;
-        }
-
-        .subtitle {
-            color: #8b949e;
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-        }
-
-        /* Social Button Containers */
-        .cta-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        /* Circular Social Icon Wrapper */
-        .social-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background-color: #161b22;
-            border: 1px solid #30363d;
-            color: #8b949e;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .social-btn:hover {
-            color: #58a6ff;
-            border-color: #58a6ff;
-            background-color: #21262d;
-        }
-
-        /* Let's Talk CTA Button */
-        .talk-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 24px;
-            height: 45px;
-            border-radius: 23px;
-            background: linear-gradient(135deg, #1f40aa, #162a70);
-            color: #ffffff;
-            font-weight: 600;
-            text-decoration: none;
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 12px rgba(31, 64, 170, 0.3);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .talk-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 6px 16px rgba(31, 64, 170, 0.4);
-        }
-
-        /* Optional Lucide Icon sizing adjustment */
-        .social-btn i, .social-btn svg {
-            width: 20px;
-            height: 20px;
-        }
+        
+        .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,40,104,0.08); }
+        
+        .bg-grid { background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 30px 30px; }
+        
+        /* Custom Badge Styling */
+        .badge-uta { background: #E6E9EF; color: #002868; border: 1px solid #CCD4E1; }
+        .accent-orange { color: #F58025; }
+        .accent-blue { color: #002868; }
+        
+        /* Custom Button */
+        .btn-primary { @apply bg-utaBlue text-white hover:bg-black transition-all duration-300 shadow-lg shadow-blue-900/10; }
+        .btn-outline { @apply border border-utaOrange text-utaOrange hover:bg-utaOrange hover:text-white transition-all duration-300; }
     </style>
 </head>
-<body>
+<body class="antialiased overflow-x-hidden">
 
-    <div class="header-container">
-        <h1>KRITI GUPTA</h1> [cite: 2]
-        <div class="subtitle">Business Analyst & Software Engineer</div> [cite: 5, 23]
-        
-        <div class="cta-container">
-            <a href="https://github.com" target="_blank" class="social-btn" aria-label="GitHub">
-                <i data-lucide="github"></i>
-            </a>
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="font-extrabold text-xl tracking-tighter text-utaBlue">KRITI<span class="text-utaOrange">.</span>G</div>
+            
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
+                <a href="#home" class="hover:text-utaOrange transition">Home</a>
+                <a href="#projects" class="hover:text-utaOrange transition">Projects</a>
+                <a href="#skills" class="hover:text-utaOrange transition">Skills</a>
+                <a href="#experience" class="hover:text-utaOrange transition">Experience</a>
+                <a href="#contact" class="hover:text-utaOrange transition">Contact</a>
+            </div>
 
-            <a href="https://linkedin.com" target="_blank" class="social-btn" aria-label="LinkedIn">
-                <i data-lucide="linkedin"></i>
-            </a>
-
-            <a href="mailto:kritigupta0613@gmail.com" class="talk-btn">LET'S TALK</a> 
+            <div class="flex items-center space-x-4">
+                <a href="https://github.com/kriti613" class="text-gray-400 hover:text-utaBlue transition"><i data-lucide="github" class="w-5 h-5"></i></a>
+                <a href="https://www.linkedin.com/in/kriti-guptaaa/" class="text-gray-400 hover:text-utaBlue transition"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                <a href="#contact" class="hidden lg:block border border-utaBlue text-utaBlue px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-utaBlue hover:text-white transition">Book a Call</a>
+            </div>
         </div>
-    </div>
+    </nav>
 
+    <section id="home" class="relative pt-40 pb-24 overflow-hidden bg-grid">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div class="relative z-10">
+                <div class="flex flex-wrap gap-3 mb-6">
+                    <span class="badge-uta px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">UTA Datathon Winner</span>
+                    <span class="badge-uta px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border-utaOrange/30">Business Analytics</span>
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-utaBlue">
+                    Building <span class="text-gradient">Decision-Ready</span> AI & Analytics.
+                </h1>
+                <p class="text-xl text-gray-600 mb-10 leading-relaxed max-w-xl">
+                    I convert messy data into actionable outcomes. From automated EDA assistants to retention modeling, I build the bridges between raw numbers and business strategy.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#projects" class="bg-utaBlue text-white px-8 py-4 rounded-xl font-bold hover:bg-black transition flex items-center shadow-xl shadow-utaBlue/20">
+                        View Projects <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                    </a>
+                    <a href="#contact" class="bg-white border border-gray-200 px-8 py-4 rounded-xl font-bold hover:border-utaOrange text-gray-700 transition">
+                        Contact Me
+                    </a>
+                </div>
+                
+                <div class="mt-12 flex items-center space-x-6 text-sm text-gray-500 italic">
+                    <span class="flex items-center"><i data-lucide="award" class="w-4 h-4 mr-2 text-utaOrange"></i> 2nd Place UTA Symposium</span>
+                    <span class="flex items-center"><i data-lucide="library" class="w-4 h-4 mr-2 text-utaOrange"></i> UTA Libraries Assistant</span>
+                </div>
+            </div>
+            
+            <div class="relative flex justify-center lg:justify-end">
+                <div class="relative w-80 h-96 lg:w-96 lg:h-[30rem] rounded-3xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500 border-4 border-white">
+                    <img src="https://github.com/kriti613/kriti-portfolio-web/blob/main/kriti-pic.jpeg" alt="Kriti Gupta Headshot" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-utaBlue/40 to-transparent"></div>
+                </div>
+                <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl hidden md:block border border-gray-100">
+                    <div class="text-utaBlue font-bold text-2xl">2025</div>
+                    <div class="text-gray-400 text-xs font-semibold uppercase tracking-widest">MS Analytics Candidate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 card-hover">
+                    <i data-lucide="bot" class="w-10 h-10 accent-blue mb-4"></i>
+                    <h3 class="text-lg font-bold mb-2">GenAI Builders</h3>
+                    <p class="text-gray-500 text-sm">Custom AI assistants for document Q&A and automated business insights.</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 card-hover">
+                    <i data-lucide="bar-chart-3" class="w-10 h-10 accent-orange mb-4"></i>
+                    <h3 class="text-lg font-bold mb-2">Advanced BI</h3>
+                    <p class="text-gray-500 text-sm">Interactive stakeholder dashboards focused on storytelling and ROI.</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 card-hover">
+                    <i data-lucide="database" class="w-10 h-10 accent-blue mb-4"></i>
+                    <h3 class="text-lg font-bold mb-2">Predictive ML</h3>
+                    <p class="text-gray-500 text-sm">Churn, loan default, and PTL modeling with high interpretability.</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 card-hover">
+                    <i data-lucide="users" class="w-10 h-10 accent-orange mb-4"></i>
+                    <h3 class="text-lg font-bold mb-2">Leadership</h3>
+                    <p class="text-gray-500 text-sm">Leading OESAG initiatives and optimizing library operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <h2 class="text-4xl font-extrabold mb-4 text-utaBlue">Featured Projects</h2>
+                    <p class="text-gray-600">Selected work bridging Data Science and Software Engineering.</p>
+                </div>
+                <a href="https://github.com/kriti613" class="text-utaOrange font-bold flex items-center hover:underline">
+                    View GitHub <i data-lucide="external-link" class="ml-2 w-4 h-4"></i>
+                </a>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8" x-data="{ active: null }">
+                
+                <div class="bg-white rounded-[2rem] overflow-hidden border border-gray-100 shadow-sm card-hover">
+                    <div class="h-64 bg-slate-200 overflow-hidden group">
+                         <img src="https://github.com/kriti613/kriti-portfolio-web/blob/main/AviationDashboard.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Aviation AI Dashboard">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-[10px] font-bold px-2 py-1 bg-blue-50 text-utaBlue rounded uppercase">OpenAI API</span>
+                            <span class="text-[10px] font-bold px-2 py-1 bg-orange-50 text-utaOrange rounded uppercase">Streamlit</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-utaBlue">Aviation Analytics AI Chatbot</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">Automates EDA and insight generation for route optimization and fuel efficiency.</p>
+                        <div class="flex gap-4">
+                            <button @click="active = (active === 1 ? null : 1)" class="text-sm font-bold bg-utaBlue text-white px-6 py-2 rounded-full hover:bg-black transition">Case Study</button>
+                            <a href="https://www.youtube.com/watch?v=EMaR-ovGTgo" class="text-sm font-bold border border-gray-200 px-6 py-2 rounded-full hover:bg-gray-50 transition">Video</a>
+                        </div>
+                        
+                        <div x-show="active === 1" x-collapse class="mt-6 pt-6 border-t border-gray-100 text-sm text-gray-700 space-y-4">
+                            <p><strong>Problem:</strong> Aviation stakeholders struggle to extract insights from fragmented route and cost data.</p>
+                            <p><strong>Approach:</strong> Built a RAG-inspired interface that accepts multi-format files to generate predictive fuel costs.</p>
+                            <p><strong>Outcome:</strong> Provides non-technical users the ability to perform complex profitability analysis via natural language.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-[2rem] overflow-hidden border border-gray-100 shadow-sm card-hover">
+                    <div class="h-64 bg-slate-200 overflow-hidden group">
+                         <img src="https://github.com/kriti613/kriti-portfolio-web/blob/main/Chatbot-UI.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Chatbot UI">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex gap-2 mb-4 text-xs">
+                            <span class="text-[10px] font-bold px-2 py-1 bg-blue-50 text-utaBlue rounded uppercase">Gemini API</span>
+                            <span class="text-[10px] font-bold px-2 py-1 bg-orange-50 text-utaOrange rounded uppercase">Prompt Eng.</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-utaBlue">Sarcastic Guru (Winner)</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">A persona-driven chatbot featuring a custom "Roast Meter" and modular sentiment architecture.</p>
+                        <div class="flex gap-4">
+                            <button @click="active = (active === 2 ? null : 2)" class="text-sm font-bold bg-utaBlue text-white px-6 py-2 rounded-full hover:bg-black transition">Case Study</button>
+                            <a href="https://www.youtube.com/watch?v=chbFbRaWtBs" class="text-sm font-bold border border-gray-200 px-6 py-2 rounded-full hover:bg-gray-50 transition">Video</a>
+                        </div>
+                        <div x-show="active === 2" x-collapse class="mt-6 pt-6 border-t border-gray-100 text-sm text-gray-700 space-y-4">
+                            <p><strong>Approach:</strong> Designed complex prompt templates to maintain persona consistency while scaling sarcasm intensity.</p>
+                            <p><strong>Obstacle:</strong> Maintaining context during long conversations. Fixed by implementing a rolling window message buffer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-20">
+                <h3 class="text-xl font-bold mb-8 flex items-center text-utaBlue">
+                    <span class="w-8 h-[2px] bg-utaOrange mr-4"></span> More Analysis & Explorations
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-6 bg-white border border-gray-100 rounded-2xl">
+                        <h4 class="font-bold mb-2">Telecom Churn Prediction</h4>
+                        <p class="text-xs text-gray-500 mb-4">Random Forest model using ColumnTransformers for pipeline efficiency.</p>
+                        <span class="text-[9px] bg-blue-50 text-utaBlue px-2 py-1 rounded font-bold">Scikit-Learn</span>
+                    </div>
+                    <div class="p-6 bg-white border border-gray-100 rounded-2xl">
+                        <h4 class="font-bold mb-2">F1 Analytics Dashboard</h4>
+                        <p class="text-xs text-gray-500 mb-4">Tableau dashboard visualizing race constructor and driver performance trends.</p>
+                        <span class="text-[9px] bg-blue-50 text-utaBlue px-2 py-1 rounded font-bold">Tableau</span>
+                    </div>
+                    <div class="p-6 bg-white border border-gray-100 rounded-2xl">
+                        <h4 class="font-bold mb-2">HR Analytics: PTL Modeling</h4>
+                        <p class="text-xs text-gray-500 mb-4">Regression-driven propensity-to-leave scoring for retention strategy.</p>
+                        <span class="text-[9px] bg-blue-50 text-utaBlue px-2 py-1 rounded font-bold">Excel/Regression</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-extrabold mb-16 text-center text-utaBlue">Technical Arsenal</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 text-sm">
+                <div>
+                    <h3 class="font-bold text-utaOrange uppercase tracking-widest text-xs mb-6">Analytics & BI</h3>
+                    <ul class="space-y-4 font-medium text-gray-700">
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaBlue"></i> SQL (Postgres/Spark)</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaBlue"></i> Power BI & Tableau</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaBlue"></i> Dashboard Storytelling</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaBlue"></i> Advanced Excel</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-utaBlue uppercase tracking-widest text-xs mb-6">Data Science</h3>
+                    <ul class="space-y-4 font-medium text-gray-700">
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaOrange"></i> Python (Pandas/NumPy)</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaOrange"></i> Predictive Modeling</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaOrange"></i> Feature Engineering</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaOrange"></i> Classification/XGBoost</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-utaOrange uppercase tracking-widest text-xs mb-6">GenAI & Apps</h3>
+                    <ul class="space-y-4 font-medium text-gray-700">
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaBlue"></i> Streamlit Prototyping</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaBlue"></i> Prompt Engineering</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaBlue"></i> RAG & OpenAI API</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaBlue"></i> Vector Search (FAISS)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-utaBlue uppercase tracking-widest text-xs mb-6">Cloud & Engineering</h3>
+                    <ul class="space-y-4 font-medium text-gray-700">
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaOrange"></i> Databricks / Delta Lake</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaOrange"></i> ASP.NET MVC / C#</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaOrange"></i> Git & CI/CD</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-3 text-utaOrange"></i> API Development</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-24 bg-utaBlue text-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-4xl font-extrabold mb-16 text-center">Professional Journey</h2>
+            
+            <div class="space-y-12">
+                <div class="relative pl-8 border-l-2 border-utaOrange">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-utaOrange"></div>
+                    <div class="mb-2 flex justify-between items-center flex-wrap">
+                        <h3 class="text-xl font-bold">Associate Software Engineer</h3>
+                        <span class="text-orange-400 text-sm font-bold uppercase tracking-widest">Tech Mahindra | 2022 — 2023</span>
+                    </div>
+                    <ul class="text-blue-100/70 space-y-3 mt-4 text-sm leading-relaxed">
+                        <li>• Delivered POCs for internal management sites including SSO and payment gateway integrations.</li>
+                        <li>• Built interactive data dashboards using HTML/CSS/JS, Chart.js, and ASP.NET MVC.</li>
+                        <li>• Developed a mobile quiz application using .NET MAUI and integrated custom APIs.</li>
+                        <li>• Handled critical R&D support tickets while delivering high-impact internal feature updates.</li>
+                    </ul>
+                </div>
+
+                <div class="relative pl-8 border-l-2 border-blue-400">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-400"></div>
+                    <div class="mb-2 flex justify-between items-center flex-wrap">
+                        <h3 class="text-xl font-bold">Software Engineer Intern</h3>
+                        <span class="text-blue-300 text-sm font-bold uppercase tracking-widest">Tech Mahindra | Jan — Jun 2022</span>
+                    </div>
+                    <p class="text-blue-100/70 text-sm">Researched and prototyped ReactJS integrations within legacy ASP.NET projects, reducing UI update lag.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+            <div>
+                <h2 class="text-4xl font-extrabold mb-8 text-utaBlue">Engineering Core, <br><span class="text-utaOrange">Analytics Mindset.</span></h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    My transition from a Full-Stack Software Engineer to a Business Analyst was driven by a single question: <em>"How do we know if this feature actually drives value?"</em>
+                </p>
+                <p class="text-gray-600 leading-relaxed mb-8">
+                    Today, I combine my technical foundation in C# and SQL with advanced ML modeling and GenAI to build tools that don't just show data, but explain it.
+                </p>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="p-6 bg-gray-50 rounded-2xl border-l-4 border-utaBlue">
+                        <h4 class="font-bold text-sm mb-2 text-utaBlue">Education</h4>
+                        <p class="text-xs text-gray-500">MS Business Analytics (UTA) <br> B.Tech (Electronics)</p>
+                    </div>
+                    <div class="p-6 bg-orange-50 rounded-2xl border-l-4 border-utaOrange">
+                        <h4 class="font-bold text-sm text-utaOrange mb-2">Availability</h4>
+                        <p class="text-xs text-gray-600 font-medium">Actively seeking full-time roles starting Dec 2025.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-utaBlue/5 p-10 rounded-[3rem] border border-utaBlue/10 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-10">
+                    <i data-lucide="quote" class="w-20 h-20 text-utaBlue"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-6 italic text-gray-500 relative z-10">"Data is just noise without a narrative."</h3>
+                <div class="space-y-6 relative z-10">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mr-4 shrink-0">
+                            <i data-lucide="mic" class="w-5 h-5 text-utaBlue"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-utaBlue">President — OESAG</h4>
+                            <p class="text-xs text-gray-500">Leading student advocacy for OER and managing officer recruitment.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mr-4 shrink-0">
+                            <i data-lucide="trophy" class="w-5 h-5 text-utaOrange"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-utaBlue">Individual Winner</h4>
+                            <p class="text-xs text-gray-500">UTA Datathon: Recognized for best-in-class UI and AI persona architecture.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-gray-900 text-white overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-utaOrange/10 rounded-full blur-3xl"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h2 class="text-4xl font-extrabold mb-4">Let's Build Something Impactful</h2>
+            <p class="text-gray-400 mb-12">I’m looking for roles in Data/Business Analytics, BI, or Applied AI.</p>
+            
+            <div class="flex flex-wrap justify-center gap-8 text-sm font-medium">
+                <a href="mailto:kritigupta0613@gmail.com" class="flex items-center text-gray-300 hover:text-utaOrange transition"><i data-lucide="mail" class="mr-2 w-5 h-5"></i> kritigupta0613@gmail.com</a>
+                <a href="https://www.linkedin.com/in/kriti-guptaaa/" class="flex items-center text-gray-300 hover:text-utaOrange transition"><i data-lucide="linkedin" class="mr-2 w-5 h-5"></i> LinkedIn</a>
+                <a href="https://github.com/kriti613" class="flex items-center text-gray-300 hover:text-utaOrange transition"><i data-lucide="github" class="mr-2 w-5 h-5"></i> GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-gray-800 bg-gray-900 text-center text-xs text-gray-500">
+        <p>&copy; 2024 Kriti Gupta. Built with Tailwind and Precision.</p>
+    </footer>
+
+    <!-- Safely Initialize Icons After DOM is Fully Ready -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
             } else {
-                console.error("Lucide library failed to load via CDN.");
+                console.error("Lucide failed to mount via CDN wrapper.");
             }
         });
     </script>
